@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     res.send("Express is running successfully!");
 });
 
-// listen to specified port(always keep this at bottom)
+// listen to PORT (always at the bottom)
 app.listen(PORT, () => {
     console.log("Server has started on port " + PORT);
 });
