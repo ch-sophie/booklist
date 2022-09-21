@@ -6,16 +6,16 @@ Book = require('../bookModel/bookModel');
 exports.index = function (req, res) {
     Book.get(function (err, books) {
        if (err) {
-           res.json({
+            res.json({
                status: "error",
                message: err,
-           });
+            });
        }
        res.json({
-           status: "success",
+           status: "success", 
            message: "Books retrieved successfully",
            data: books
-       });
+        });
     });
 };
 
@@ -31,10 +31,10 @@ exports.new = function (req, res) {
        if (err)
            res.json(err);
            console.log("1 book created!");
-       res.json({
+        res.json({
            message: 'New book created!',
            data: book
-       });
+        });
     });
 };
 
@@ -43,32 +43,32 @@ exports.view = function (req, res) {
     Book.findbyId(req.params.book_id, function (err, book) {
        if (err)
            res.send(err);
-       res.json({
+        res.json({
            message: '1 book found!',
            data: book
-       });
+        });
     });
 };
 
 // Handle update patch book info
 exports.update = function (req, res) {
     Book.findById(req.params.book_id, function (err, book) {
-       if (err)
+        if (err)
            res.send(err);
-       book.title = req.body.title ? req.body.title : book.title;
-       book.author = req.body.author;
-       book.genre = req.body.genre;
+        book.title = req.body.title ? req.body.title : book.title;
+        book.author = req.body.author;
+        book.genre = req.body.genre;
 
        // save the book and check for errors
        book.save(function (err) {
           if (err)
-              res.json(err);
-              console.log("1 book updated!");
-          res.json({
-              message: 'Book Info updated!',
-              data: book
-          });
-       });
+            res.json(err);
+                console.log("1 book updated!");
+            res.json({
+                message: 'Book Info updated!',
+                data: book
+            });
+        });
     });
 };
 
