@@ -12,7 +12,7 @@ Router.get('/', (req, res) => {
 // Import book controller
 var bookController = require('../bookController/bookController');
 
-// Book routes
+// Routes
 Router.route('/books')
     .get(bookController.index)
     .post(bookController.new);
