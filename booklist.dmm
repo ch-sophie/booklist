@@ -34,7 +34,7 @@
 				},
 				{
 					"id": "1f44b9b1-4003-4eb7-8bb1-16bedcd10f2d",
-					"name": "title",
+					"name": "book_title",
 					"datatype": "string",
 					"param": "",
 					"pk": false,
@@ -48,7 +48,7 @@
 				},
 				{
 					"id": "8705987e-21c4-4eba-9bba-4556dd56c16c",
-					"name": "author",
+					"name": "author_name",
 					"datatype": "string",
 					"param": "",
 					"pk": false,
@@ -239,7 +239,7 @@
 				},
 				{
 					"id": "a536f4c8-3d73-460b-91d1-a428750dd790",
-					"name": "birthdate",
+					"name": "birth_date",
 					"datatype": "string",
 					"param": "",
 					"pk": false,
@@ -340,7 +340,8 @@
 		"def_validationLevel": "na",
 		"def_validationAction": "na",
 		"def_collation": "",
-		"def_others": ""
+		"def_others": "",
+		"lastSaved": "Wed Sep 28 2022 13:58:57 GMT+0200 (Central European Summer Time)"
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -358,10 +359,10 @@
 			"diagramItems": {
 				"f144891c-907c-48f2-bc9e-a0a43a386b8e": {
 					"referencedItemId": "f144891c-907c-48f2-bc9e-a0a43a386b8e",
-					"x": 311,
-					"y": 141,
+					"x": 297,
+					"y": 228,
 					"gHeight": 117,
-					"gWidth": 180,
+					"gWidth": 209,
 					"color": "#ffffff",
 					"background": "#3f51b5",
 					"resized": false,
@@ -369,8 +370,8 @@
 				},
 				"41f413aa-fd9d-4876-8b47-2c130aa6a1e4": {
 					"referencedItemId": "41f413aa-fd9d-4876-8b47-2c130aa6a1e4",
-					"x": 509,
-					"y": 296,
+					"x": 548,
+					"y": 256,
 					"gHeight": 99,
 					"gWidth": 227,
 					"color": "#ffffff",
@@ -380,8 +381,8 @@
 				},
 				"e23f29d7-361b-46dd-b896-1d6dad6cd6f9": {
 					"referencedItemId": "e23f29d7-361b-46dd-b896-1d6dad6cd6f9",
-					"x": 80,
-					"y": 335,
+					"x": 66,
+					"y": 316,
 					"gHeight": 99,
 					"gWidth": 193,
 					"color": "#ffffff",
