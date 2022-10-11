@@ -5,7 +5,7 @@ const Router = require('express').Router();
 Router.get('/', (req, res) => {
     res.json({
         status: 'WORKING',
-        message: 'This is the /api/ route!'
+        message: 'This is the /API/ route!'
     });
 });
 
@@ -20,7 +20,7 @@ Router.route('/books')
 Router.route('/books/:book_id')
     .get(bookController.view)
     .patch(bookController.update)
-    .put(bookController.update)
+    // .put(bookController.update)
     .delete(bookController.delete);
 
 // Export API routes
