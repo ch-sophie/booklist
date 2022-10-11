@@ -1,31 +1,32 @@
 // import express, mongoose, bodyparser
 const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const dotenv = require("dotenv");
+const apiRoute = require("./routes/routes");
 
-require('dotenv').config();
+// define server port
+const PORT = process.env.port || 5000;
+
+const Db = process.env.MONGODB_URI;
+
+dotenv.config();
 
 
-// import route
-const apiRoute = require("./routes/routes.js");
-
-// initializing the app
-const app = express();
+// connect to my database
+mongoose.connect(Db,{useNewUrlParser: true, useUnifiedTopology : true})
+.then(() => console.log('connected to database'))
+.catch((err) => console.log(err));
 
 // configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-// connect to my database
-mongoose.connect('mongodb+srv://admin:book-list123@booklist.lyzhjgc.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected to database'))
-.catch((err) => console.log(err));
-
-// define server port
-const PORT = process.env.port || 3001;
-
 // use routes
 app.use('/', apiRoute);
+
+app.use(express.json());
 
 // send message for default route
 app.get('/', (req, res) => {
@@ -34,5 +35,5 @@ app.get('/', (req, res) => {
 
 // listen to PORT (always at the bottom)
 app.listen(PORT, () => {
-    console.log("Server has started on port " + PORT);
+    console.log(`Server has started on port ${PORT}`);
 });
